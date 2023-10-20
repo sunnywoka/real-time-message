@@ -1,0 +1,23 @@
+{
+  "name": "real-time-message",
+  "version": "1.0.0",
+  "description": "Learning socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "dev": "run-p dev:server dev:client dev:css",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:client": "vite",
+    "dev:css": "tailwindcss -i client/styles/input.css -o public/output.css --watch",
+    "build": "run-s build:client build:server build:css",
+    "build:client": "vite build",
+    "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts",
+    "build:css": "tailwindcss -i client/styles/input.css -o public/output.css",
+    "preview": "vite preview",
+    "test": "NODE_ENV=test vitest",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
+  },
+  "author": "Yuekai Wu",
+  "license": "ISC"
+}
