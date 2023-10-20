@@ -4,4 +4,3 @@ bundle.*
 .env
 /dist
 output.css
-package-lock.json
