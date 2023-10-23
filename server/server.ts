@@ -12,9 +12,9 @@ server.use(express.json())
 server.use(cors())
 
 io.on('connection', (socket) => {
-  console.log(`client ${socket.id} just connected`)
+  console.log(`Client ${socket.id} connected`)
   socket.on('disconnect', () => {
-    console.log(`client ${socket.id} disconnected`)
+    console.log(`Client ${socket.id} disconnected`)
   })
 })
 
