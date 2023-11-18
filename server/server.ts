@@ -6,7 +6,9 @@ import { Server } from 'socket.io'
 
 const server = express()
 const httpServer = createServer(server)
-const io = new Server(httpServer, { cors: { origin: 'http://localhost:3000' } })
+const io = new Server(httpServer, {
+  cors: { origin: 'http://localhost:3000', methods: ['GET', 'POST'] },
+})
 
 server.use(express.json())
 server.use(cors())
