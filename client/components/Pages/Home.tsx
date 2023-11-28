@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Sign in</p>
+      <p>Sign in to chat</p>
       <label htmlFor="username">Username</label>
       <input
         type="text"
